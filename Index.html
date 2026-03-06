@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+
+<meta charset="UTF-8">
+<title>קבוצת אופניים סיניות</title>
+
+<style>
+
+body{
+font-family:Arial;
+direction:rtl;
+background:#f2f2f2;
+text-align:center;
+}
+
+.container{
+width:900px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:10px;
+}
+
+.member{
+background:#ecf0f1;
+padding:10px;
+margin:10px;
+border-radius:6px;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+margin:10px;
+cursor:pointer;
+}
+
+.stat{
+font-size:22px;
+margin:20px;
+}
+
+</style>
+
+<script>
+
+let money=0
+let orders=0
+let ultegraDebates=42
+
+function orderBike(){
+
+orders++
+money+=3500
+
+document.getElementById("orders").innerText=orders
+document.getElementById("money").innerText=money
+
+}
+
+function debate(){
+
+ultegraDebates++
+document.getElementById("ultegra").innerText=ultegraDebates
+
+}
+
+function groupDecision(){
+
+let events=[
+"אסף מציג מסלול חדש עם טסטים",
+"רוסו אומר 'שמע אחי זה וואו'",
+"זיו שואל כמה שוקלת השלדה",
+"מישהו פותח AliExpress",
+"מישהו כבר הזמין משהו",
+"דיון 105 מול אולטגרה מתחיל מחדש"
+]
+
+let r=Math.floor(Math.random()*events.length)
+
+document.getElementById("decision").innerText=events[r]
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚴 קבוצת "אופניים סיניות 🇨🇳"</h1>
+
+<p>
+קבוצה שנפתחה לדבר על אופניים  
+והפכה למרכז מחקר, פיתוח והזמנות מסין.
+</p>
+
+<h2>👥 חברי הקבוצה</h2>
+
+<div class="member">
+<b>Asaf Alfandari</b><br>
+מנהל המחקר והפיתוח של הקבוצה. אחראי על מסלולים, גרפים ותוכניות טסט שאף אחד לא ציפה אליהן.
+</div>
+
+<div class="member">
+<b>Itay Russo</b><br>
+האיש שכבר הזמין אופניים לפני שהדיון התחיל.
+</div>
+
+<div class="member">
+<b>זיו</b><br>
+המומחה הטכני. שואל כמה שוקלת השלדה ומה ההבדל בין 105 לאולטגרה.
+</div>
+
+<div class="member">
+<b>Nitzan Ben Sasson</b><br>
+המוטיבטור של הקבוצה.
+</div>
+
+<div class="member">
+<b>Zohar Amit</b><br>
+נכנס לשיחה בזמן הנכון כדי לצחוק על כולם.
+</div>
+
+<div class="member">
+<b>ערן</b><br>
+לפי הקבוצה – כנראה התחיל את כל הסיפור של אופניים מסין.
+</div>
+
+<h2>📊 סטטיסטיקות הקבוצה</h2>
+
+<div class="stat">
+כמה אופניים הוזמנו: <span id="orders">0</span>
+</div>
+
+<div class="stat">
+כמה כסף נשרף: $<span id="money">0</span>
+</div>
+
+<div class="stat">
+ויכוחים על 105 מול אולטגרה: <span id="ultegra">42</span>
+</div>
+
+<button onclick="orderBike()">מישהו הזמין שוב</button>
+<button onclick="debate()">ויכוח על אולטגרה</button>
+
+<h2>🤖 סימולטור הודעות מהקבוצה</h2>
+
+<button onclick="groupDecision()">מה קורה עכשיו בקבוצה?</button>
+
+<div class="stat" id="decision"></div>
+
+<h2>🚴 תכנון רכיבה לסופ״ש הקרוב</h2>
+
+<p>חימום: צומת האלה → בית שמש (~10 ק״מ)</p>
+<p>טסט ראשון עד המהרה</p>
+<p>רכיבה קלה עד בר בהר</p>
+<p>עצירה בבר בהר (10-15 דקות)</p>
+<p>ירידה דרך צור הדסה</p>
+<p>טסט שני – 20 דקות עד צומת האלה</p>
+<p>אם מגיעים מוקדם: עושים פרסה וממשיכים</p>
+<p>מי שלא עושה טסט: הולך לשחק באדרת</p>
+
+<h2>📦 הערות בטיחות מהקבוצה</h2>
+
+<p style="font-size:18px;">
+אם יש אזעקה במהלך הרכיבה:  
+להניח את האופניים בעדינות ולשכב עליהם בזהירות שלא יפגעו.
+</p>
+
+</div>
+
+</body>
+</html>
